@@ -26,6 +26,15 @@ struct FlashCardsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .task {
+                    do {
+                        if try sharedModelContainer.mainContext.fetch(FetchDescriptor<Card>()).isEmpty {
+                            Example.contents.forEach { sharedModelContainer.mainContext.insert($0) }
+                        }
+                    } catch {
+                        fatalError("Failed to load cards")
+                    }
+                }
         }
         .modelContainer(sharedModelContainer)
     }
