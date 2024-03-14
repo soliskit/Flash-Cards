@@ -14,7 +14,6 @@ struct CardGallery: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 200))], spacing: 20) {
-                
                 ForEach(cards) { card in
                     CardGalleryItem(backgroundStyle: Color.cardFront) {
                         selectCard(card)
