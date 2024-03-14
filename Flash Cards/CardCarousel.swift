@@ -39,6 +39,11 @@ struct CardCarousel: View {
             .scrollIndicators(.hidden)
             .scrollTargetBehavior(.paging)
             
+            Text("Swipe left/right to review other cards")
+                .lineLimit(2)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.secondary)
+                .font(.footnote)
         }
     }
 }
