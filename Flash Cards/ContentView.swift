@@ -10,10 +10,18 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Card]
+    @Query private var cards: [Card]
+    @State private var navigationPath: [Card] = []
 
     var body: some View {
-        Text("Hello")
+        NavigationStack(path: $navigationPath) {
+            CardGallery(cards: cards) { card in
+                withAnimation {
+                    navigationPath.append(card)
+                }
+            }
+            .padding()
+        }
     }
 }
 
