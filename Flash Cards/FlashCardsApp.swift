@@ -1,5 +1,5 @@
 //
-//  Flash_CardsApp.swift
+//  FlashCardsApp.swift
 //  Flash Cards
 //
 //  Created by David Solis on 3/14/24.
@@ -9,10 +9,10 @@ import SwiftUI
 import SwiftData
 
 @main
-struct Flash_CardsApp: App {
+struct FlashCardsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Card.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
