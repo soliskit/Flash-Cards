@@ -55,6 +55,6 @@ struct CardCarousel: View {
     }
 }
 
-#Preview {
+#Preview("Card Carousel") {
     CardCarousel(cards: Example.contents, selectedCard: Example.contents[0])
 }

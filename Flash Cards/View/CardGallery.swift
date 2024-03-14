@@ -30,7 +30,7 @@ struct CardGallery: View {
     }
 }
 
-#Preview {
+#Preview("Card Gallery") {
     CardGallery(cards: Example.contents) { _ in
         
     }
