@@ -29,6 +29,7 @@ struct CardCarousel: View {
                             FlashCardView(card: card)
                                 .id(card.id)
                         }
+                        .containerRelativeFrame(.horizontal)
                     }
                 }
             }
