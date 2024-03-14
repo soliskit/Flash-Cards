@@ -45,6 +45,13 @@ struct CardCarousel: View {
                 .foregroundStyle(.secondary)
                 .font(.footnote)
         }
+        .background()
+        .onAppear {
+            selectedCardID = initialCardID
+        }
+        .onChange(of: selectedCardID) {
+            focusCardID = $1
+        }
     }
 }
 
