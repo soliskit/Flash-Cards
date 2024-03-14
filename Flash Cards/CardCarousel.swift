@@ -30,9 +30,15 @@ struct CardCarousel: View {
                                 .id(card.id)
                         }
                         .containerRelativeFrame(.horizontal)
+                        .focused($focusCardID, equals: card.id)
                     }
                 }
+                .scrollTargetLayout()
             }
+            .scrollPosition(id: $selectedCardID)
+            .scrollIndicators(.hidden)
+            .scrollTargetBehavior(.paging)
+            
         }
     }
 }
